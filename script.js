@@ -1,18 +1,35 @@
 const usedStorageElement = document.querySelector('.used-num');
 const maxStorageElement = document.querySelector('.storage-max');
 const storageUsedElement = document.getElementById('storage-used');
-var usageLeftElement = document.getElementById('usage-left');
-// Parsing the numerical values from the extracted elements
-const usedStorage = parseInt(usedStorageElement.textContent); // Extracted as 815
-const maxStorage = parseInt(maxStorageElement.textContent); // Extracted as 1000
+const usageLeftElement = document.getElementById('usage-left');
+const storagePointElement = document.querySelector('.storage-point');
 
-// Calculating the percentage of used storage
+// Parsing the numerical values from the extracted elements
+const usedStorage = parseInt(usedStorageElement.textContent); 
+const maxStorage = parseInt(maxStorageElement.textContent); 
+
+
 const percentageUsed = (usedStorage / maxStorage) * 100;
 
-// Calculating usage left
+
 const usageLeft = maxStorage - usedStorage;
 
-// Setting the text of usage-left element based on the usageLeft
 usageLeftElement.textContent = usageLeft;
-// Setting the width of storage-used element based on the calculated percentage
+
 storageUsedElement.style.width = `${percentageUsed}%`;
+
+const animationDuration = 1.5;
+
+const keyframesRule = `@keyframes expandWidth {
+    from {
+        width: 0%;
+    }
+    to {
+        width: ${percentageUsed}%;
+    }
+}`;
+
+const styleSheet = document.styleSheets[0]; 
+styleSheet.insertRule(keyframesRule, styleSheet.cssRules.length);
+
+storagePointElement.style.animation = `expandWidth ${animationDuration}s ease-in-out forwards`;
