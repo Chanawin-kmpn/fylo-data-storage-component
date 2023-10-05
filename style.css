@@ -118,17 +118,18 @@ span.used-num {
     border-radius: 8px;
     background: linear-gradient(90deg, #FFA197 0%, #FF4A95 100%);
     opacity: 1;
+    padding: 0.125rem;
 }
 
 .storage-point::after {
     content: '';
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     background-color: hsla(0, 0%, 100%, 1);
     opacity: 1;
-    right: 0;
+    right: 2px;
 }
 
 .storage-cap {
@@ -141,7 +142,9 @@ span.used-num {
 
 .storage-left {
     color: hsla(229, 57%, 11%, 0.5);
+    font-size: var(--fs-200);
     font-weight: var(--fw-bold);
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 0.5625rem;
@@ -151,7 +154,8 @@ span.used-num {
     background-color: hsla(0, 0%, 100%, 1);
     box-shadow: 0px 75px 100px -30px rgba(0, 0, 0, 0.25);
     margin: 1rem auto;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.4rem;
+    letter-spacing: 0.0625rem;
 }
 
 .left-num {
@@ -198,10 +202,18 @@ footer {
         padding: 2.5rem;
     }
 
+    .storage-usage {
+        letter-spacing: 0.005rem;
+    }
+
+    .storage-cap {
+        margin-top: 0.6333em;
+    }
+
     .storage-left {
         position: relative;
         border-bottom-right-radius: 0;
-        margin: -10.5rem 0 0 17.6rem;
+        margin: -10.1rem 0 0 17.6rem;
     }
 
     .clip-path {
