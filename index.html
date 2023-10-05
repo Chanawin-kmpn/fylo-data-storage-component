@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Fylo data storage component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  
 </head>
+
 <body>
 
-  You’ve used 815 GB of your storage
+  <main class="container">
+    <section class="file-section">
+      <img src="./images/logo.svg" alt="Fylo logo" class="logo-image">
+      <div class="file-manage">
+        <a href="#" class="file-selector"><img src="./images/icon-document.svg" alt="Document icon"></a>
+        <a href="#" class="file-selector"><img src="./images/icon-folder.svg" alt="Folder icon"></a>
+        <a href="#" class="file-selector"><img src="./images/icon-upload.svg" alt="Upload icon"></a>
+      </div>
+    </section>
 
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <section class="storage-section">
+      <p class="storage-usage">You’ve used <span class="used-num">815 GB</span> of your storage</p>
+      <div class="storage-bar">
+        <div class="storage-point" id="storage-used"></div>
+      </div>
+
+      <div class="storage-cap">
+        <p class="storage-min">0 GB</p>
+        <p class="storage-max">1000 GB</p>
+      </div>
+      <div class="storage-left"><span class="left-num" id="usage-left">185</span>
+        <p>GB Left</p>
+        <div class="clip-path"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n/hub" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/Upond">Chanawin Kamolpanus (Thailand)</a>.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
